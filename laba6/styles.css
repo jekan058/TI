@@ -1,0 +1,83 @@
+/* Загальні стилі */
+body {
+    background-image: url('background.jpg'); /* Додайте посилання на свою фонову картинку */
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.task {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Завдання 4 стилі */
+#task4 {
+    text-align: center;
+}
+
+/* Завдання 5 стилі */
+#task5 {
+    text-align: center;
+}
+
+#image-container {
+    margin: 10px auto;
+    width: 300px; /* Задайте бажаний розмір контейнера для зображення */
+}
+
+#image {
+    max-width: 100%;
+    height: auto;
+    border: none; /* Видалено рамку навколо картинки */
+}
+
+#image-url {
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Завдання 6 стилі */
+#task6 {
+    text-align: center;
+}
+
+#question-container {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#answer-input {
+    width: 200px; /* Збільшено розмір вводу для відповіді */
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#result-output {
+    font-weight: bold;
+    margin-top: 10px;
+}

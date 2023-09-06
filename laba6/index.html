@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Лабораторна робота</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <!-- Завдання 1 -->
+    <div id="task1" class="task">
+        <h2>Завдання 1</h2>
+        <button onclick="task1()">Виконати завдання</button>
+        <p id="task1-result"></p>
+    </div>
+
+    <!-- Завдання 2 -->
+    <div id="task2" class="task">
+        <h2>Завдання 2</h2>
+        <button onclick="showUserNamePrompt()">Показати ім'я</button>
+        <p id="user-name"></p>
+    </div>
+
+    <!-- Завдання 3 -->
+    <div id="task3" class="task">
+        <h2>Завдання 3</h2>
+        <input type="number" id="number1" placeholder="Число 1">
+        <input type="number" id="number2" placeholder="Число 2">
+        <button onclick="task3()">Знайти мінімум</button>
+        <p id="task3-result"></p>
+    </div>
+
+    <!-- Завдання 4 -->
+    <div id="task4" class="task">
+        <h2>Завдання 4</h2>
+        <label for="fahrenheit-input">Температура в Фаренгейтах:</label>
+        <input type="number" id="fahrenheit-input" placeholder="Температура в Фаренгейтах">
+        <br>
+        <label for="celsius-input">Температура в Цельсіях:</label>
+        <input type="number" id="celsius-input" placeholder="Температура в Цельсіях">
+    </div>
+    <button onclick="convertToFahrenheit()">Перевести в Фаренгейти</button>
+    <button onclick="convertToCelsius()">Перевести в Цельсії</button>
+
+
+    <!-- Завдання 5 -->
+    <div id="task5" class="task">
+        <h2>Завдання 5</h2>
+        <div id="image-container">
+            <img id="image" src="https://images.wallpaperscraft.ru/image/single/devushka_riukzak_babochki_1031438_3840x2160.jpg" alt="Зображення">
+        </div>
+        <label for="image-url">Посилання на зображення:</label>
+        <input type="text" id="image-url" placeholder="Введіть посилання">
+        <button onclick="changeImage()">Змінити зображення</button>
+    </div>
+
+
+    <!-- Завдання 6 -->
+    <div id="task6" class="task">
+        <h2>Завдання 6</h2>
+        <p id="question-container"></p>
+        <input type="number" id="answer-input" placeholder="Введіть відповідь">
+        <button onclick="checkAnswer()">Перевірити</button>
+        <p id="result-output"></p>
+        <button onclick="startMultiplicationTask()">Почати перевірку</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

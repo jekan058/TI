@@ -1,0 +1,39 @@
+/* Зовнішній вигляд таблиці */
+.my-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+/* Заголовок таблиці */
+.my-table caption {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Стиль заголовків стовпців */
+.my-table th {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Стиль рядків таблиці */
+.my-table td {
+    border: 1px solid #000000;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Першому стовпцю встановлюємо фіксовану ширину */
+.my-table td:first-child,
+.my-table th:first-child {
+    width: 10%;
+}
+
+/* Рядки з парними номерами таблиці виділяємо кольором */
+.my-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

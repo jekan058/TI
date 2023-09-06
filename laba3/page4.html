@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музичний Програвач</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .music-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="./page1.html">Сторінка 1</a>
+        <a href="./page2.html">Сторінка 2</a>
+        <a href="./page3.html">Сторінка 3</a>
+        <a href="./page4.html">Сторінка 4</a>
+    </header>
+    <div class="music-container">
+        <h1>Музичний Програвач</h1>
+
+        <label for="songSelect">Виберіть пісню:</label>
+        <select id="songSelect">
+            <option value="song1.mp3" selected>Пісня 1</option>
+            <option value="song2.mp3">Пісня 2</option>
+            <!-- Можемо додати інші пісні за потребою -->
+        </select>
+
+        <audio id="audioPlayer" controls>
+            <source src="" type="audio/mpeg">
+            <!-- Можна додати інші формати музичних файлів (наприклад, Ogg) для більшої сумісності -->
+        </audio>
+    </div>
+
+    <script>
+        const songSelect = document.getElementById('songSelect');
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        // Обробник події для вибору пісні
+        songSelect.addEventListener('change', onChangeSong);
+
+        function onChangeSong() {
+            const selectedSong = songSelect.value;
+            audioPlayer.src = selectedSong;
+            audioPlayer.load(); // Завантаження вибраної пісні
+        }
+
+        onChangeSong();
+    </script>
+
+        <!-- Додавання іконок та посилань -->
+        <div class="social-icons">
+            <a href="https://t.me/SkyFlame" target="_blank"><img src="telegram-icon.png" alt="Telegram"></a>
+            <a href="https://www.instagram.com/tritepony/" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="https://steamcommunity.com/profiles/76561198981718571/" target="_blank"><img src="steam-icon.png" alt="Steam"></a>
+        </div>
+        
+</body>
+</html>

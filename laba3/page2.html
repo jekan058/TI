@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps Example</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="./page1.html">Сторінка 1</a>
+        <a href="./page2.html">Сторінка 2</a>
+        <a href="./page3.html">Сторінка 3</a>
+        <a href="./page4.html">Сторінка 4</a>
+    </header>
+    <h1>Моя карта Google</h1>
+    <div id="map"></div>
+
+    <!-- випадаючий список для вибору маршруту -->
+    <select id="routeSelect">
+        <option value="cafe">До кафе</option>
+        <option value="its">До 30 корпусу ІТС</option>
+        <option value="kpi">До головного корпусу КПІ</option>
+        <option value="polyana">До Поляни, пить пиво</option>
+    </select>
+
+    <script>
+        // Функція для ініціалізації карти
+        function initMap() {
+            // Координати місця, яке я буду відображати
+            var myLocation = { lat: 50.422355, lng: 30.479721 }; // Мій дім
+
+            // Створення об'єкту карти і встановлення центру та зуму
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: myLocation,
+                zoom: 15 // Масштаб карти
+            });
+
+            // Додавання мітки на карту для мого дому
+            var homeMarker = new google.maps.Marker({
+                position: myLocation,
+                map: map,
+                title: 'Мій будинок'
+            });
+
+            // Координати мого улюбленого кафе
+            var cafeLocation = { lat: 50.462304484236505, lng: 30.51761543437203 }; // Кафе
+
+            // Додавання мітки на карту для кафе
+            var cafeMarker = new google.maps.Marker({
+                position: cafeLocation,
+                map: map,
+                title: 'Моє улюблене кафе'
+            });
+
+            // Координати нашого 30 корпусу
+            var itsLocation = { lat: 50.442960739787665, lng: 30.443656239547064 }; // ІТС
+
+            // Додавання мітки на карту для 30 корпусу
+            var itsMarker = new google.maps.Marker({
+                position: itsLocation,
+                map: map,
+                title: '30 корпус ІТС'
+            });
+
+            // Координати нашого головного корпусу КПІ (корпус №1)
+            var kpiLocation = { lat: 50.44948229155053, lng: 30.460780804684983 }; // КПІ
+
+            // Додавання мітки на карту для головного корпусу КПІ (корпус №1)
+            var kpiMarker = new google.maps.Marker({
+                position: kpiLocation,
+                map: map,
+                title: 'Головний корпус КПІ'
+            });
+
+            // Координати нашої улюбленої "Поляни"
+            var polyanaLocation = { lat: 50.44733384823625, lng: 30.453987184304097 }; // ПОЛЯНА!!!!
+
+            // Додавання мітки на карту для "Поляни"
+            var polyanaMarker = new google.maps.Marker({
+                position: polyanaLocation,
+                map: map,
+                title: 'Головний корпус КПІ'
+            });
+
+            // Створення об'єкту для прокладання маршруту
+            var directionsService = new google.maps.DirectionsService;
+            var directionsDisplay = new google.maps.DirectionsRenderer;
+            directionsDisplay.setMap(map);
+
+            // Вибір маршруту випадаючим списком
+            var routeSelect = document.getElementById('routeSelect');
+            routeSelect.addEventListener('change', function() {
+                var selectedRoute = routeSelect.value;
+                if (selectedRoute === 'cafe') {
+                    calculateAndDisplayRoute(directionsService, directionsDisplay, myLocation, cafeLocation);
+                } else if (selectedRoute === 'its') {
+                    calculateAndDisplayRoute(directionsService, directionsDisplay, myLocation, itsLocation);
+                } else if (selectedRoute === 'kpi') {
+                    calculateAndDisplayRoute(directionsService, directionsDisplay, myLocation, kpiLocation);
+                } else if (selectedRoute === 'polyana') {
+                    calculateAndDisplayRoute(directionsService, directionsDisplay, myLocation, polyanaLocation);
+                }
+            });
+
+            // Запит на прокладання маршруту до кафе за замовчуванням
+            calculateAndDisplayRoute(directionsService, directionsDisplay, myLocation, cafeLocation);
+        }
+
+        // Функція для прокладання маршруту та відображення його на карті
+        function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination) {
+            directionsService.route({
+                origin: origin,
+                destination: destination,
+                travelMode: 'DRIVING'
+            }, function(response, status) {
+                if (status === 'OK') {
+                    directionsDisplay.setDirections(response);
+                } else {
+                    window.alert('Не вдалося знайти маршрут через: ' + status);
+                }
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPM66Wdg6ZN1BLTYdycQAbV_PIUjcBajk&callback=initMap"
+    async defer></script>
+
+        <!-- Додавання іконок та посилань -->
+        <div class="social-icons">
+            <a href="https://t.me/SkyFlame" target="_blank"><img src="telegram-icon.png" alt="Telegram"></a>
+            <a href="https://www.instagram.com/tritepony/" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="https://steamcommunity.com/profiles/76561198981718571/" target="_blank"><img src="steam-icon.png" alt="Steam"></a>
+        </div>
+        
+</body>
+</html>

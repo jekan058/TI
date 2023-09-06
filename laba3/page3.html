@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Відео Програвач</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="./page1.html">Сторінка 1</a>
+        <a href="./page2.html">Сторінка 2</a>
+        <a href="./page3.html">Сторінка 3</a>
+        <a href="./page4.html">Сторінка 4</a>
+    </header>
+    <div class="video-container">
+        <h1>Відео Програвач</h1>
+
+        <video id="videoPlayer" controls>
+            <source src="video.mp4" type="video/mp4">
+            <!-- Можна додати інші формати відео (наприклад, WebM або Ogg) для більшої сумісності -->
+        </video>
+    </div>
+
+    <script>
+        const video = document.getElementById('videoPlayer');
+        const subtitles = document.getElementById('subtitles');
+        
+    </script>
+
+        <!-- Додавання іконок та посилань -->
+        <div class="social-icons">
+            <a href="https://t.me/SkyFlame" target="_blank"><img src="telegram-icon.png" alt="Telegram"></a>
+            <a href="https://www.instagram.com/tritepony/" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="https://steamcommunity.com/profiles/76561198981718571/" target="_blank"><img src="steam-icon.png" alt="Steam"></a>
+        </div>
+        
+</body>
+</html>
