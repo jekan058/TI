@@ -45,7 +45,7 @@
     <div id="task5" class="task">
         <h2>Завдання 5</h2>
         <div id="image-container">
-            <img id="image" src="https://images.wallpaperscraft.ru/image/single/devushka_riukzak_babochki_1031438_3840x2160.jpg" alt="Зображення">
+            <img id="image" src="https://images.wallpaperscraft.ru/image/single/devushka_riukzak_babочки_1031438_3840x2160.jpg" alt="Зображення">
         </div>
         <label for="image-url">Посилання на зображення:</label>
         <input type="text" id="image-url" placeholder="Введіть посилання">
@@ -62,6 +62,26 @@
         <p id="result-output"></p>
         <button onclick="startMultiplicationTask()">Почати перевірку</button>
     </div>
+
+
+    <!-- Завдання 7 -->
+    <div id="task7" class="task">
+        <h2>Завдання 7</h2>
+        <div id="captcha-container">
+            <!-- Цифри для капчі -->
+            <div class="captcha-digit" id="captcha-digit1"></div>
+            <div class="captcha-digit" id="captcha-digit2"></div>
+            <div class="captcha-digit" id="captcha-digit3"></div>
+            <div class="captcha-digit" id="captcha-digit4"></div>
+            <div class="captcha-digit" id="captcha-digit5"></div>
+        </div>
+        <label for="user-input">Введіть цифри:</label>
+        <input type="text" id="user-input" placeholder="Введіть цифри">
+        <button onclick="checkCaptcha()">Перевірити</button>
+        <p id="captcha-result"></p>
+        <button onclick="generateCaptcha()">Згенерувати нову капчу</button>
+    </div>
+
 
     <script src="script.js"></script>
 </body>

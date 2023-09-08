@@ -4,7 +4,7 @@ function registerUser() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    // Відправте POST-запит на сервер для реєстрації користувача
+    // Відправка POST-запиту на сервер для реєстрації користувача
     fetch('/register', {
         method: 'POST',
         headers: {
@@ -26,7 +26,7 @@ function loginUser() {
     const loginEmail = document.getElementById('login-email').value;
     const loginPassword = document.getElementById('login-password').value;
 
-    // Відправте POST-запит на сервер для авторизації користувача
+    // Відправка POST-запиту на сервер для авторизації користувача
     fetch('/login', {
         method: 'POST',
         headers: {
@@ -47,7 +47,7 @@ function loginUser() {
 function submitComment() {
     const comment = document.getElementById('comment').value;
 
-    // Відправте POST-запит на сервер для збереження коментаря
+    // Відправка POST-запиту на сервер для збереження коментаря
     fetch('/comment', {
         method: 'POST',
         headers: {

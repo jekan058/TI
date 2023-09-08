@@ -81,3 +81,25 @@ button:hover {
     font-weight: bold;
     margin-top: 10px;
 }
+
+/* Завдання 7 стилі */
+#task7 {
+    text-align: center;
+}
+
+.captcha-digit {
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    margin-right: 5px;
+    background-color: #f0f0f0;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+#captcha-result {
+    font-weight: bold;
+    margin-top: 10px;
+}

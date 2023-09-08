@@ -49,7 +49,6 @@ function changeImage() {
     }
 }
 
-
 // Завдання 6
 var multiplicationTable = [];
 var currentQuestionIndex = 0;
@@ -135,4 +134,147 @@ function displayResults() {
 
         results.innerHTML += "</ul>";
     }
+}
+
+
+// Завдання 7
+const captchaContainer = document.getElementById("captcha-container");
+const userInput = document.getElementById("user-input");
+const captchaResult = document.getElementById("captcha-result");
+
+// Створення об'єкта для кожної цифри
+const digits = [
+    [
+        "  ###  ",
+        " #   # ",
+        "#     #",
+        "#     #",
+        "#     #",
+        " #   # ",
+        "  ###  "
+    ],
+    [
+        "   #   ",
+        "  ##   ",
+        " # #   ",
+        "   #   ",
+        "   #   ",
+        "   #   ",
+        " ##### "
+    ],
+    [
+        " ##### ",
+        "#     #",
+        "      #",
+        " ##### ",
+        "#      ",
+        "#      ",
+        "#######"
+    ],
+    [
+        " ##### ",
+        "#     #",
+        "      #",
+        " ##### ",
+        "      #",
+        "#     #",
+        " ##### "
+    ],
+    [
+        "#      ",
+        "#    # ",
+        "#    # ",
+        "#    # ",
+        "#######",
+        "     # ",
+        "     # "
+    ],
+    [
+        "#######",
+        "#      ",
+        "#      ",
+        "#######",
+        "      #",
+        "#     #",
+        " ##### "
+    ],
+    [
+        " ##### ",
+        "#     #",
+        "#      ",
+        "#######",
+        "#     #",
+        "#     #",
+        " ##### "
+    ],
+    [
+        "#######",
+        "#    # ",
+        "    #  ",
+        "   #   ",
+        "   #   ",
+        "   #   ",
+        "   #   "
+    ],
+    [
+        " ##### ",
+        "#     #",
+        "#     #",
+        " ##### ",
+        "#     #",
+        "#     #",
+        " ##### "
+    ],
+    [
+        " ##### ",
+        "#     #",
+        "#     #",
+        " ######",
+        "      #",
+        "#     #",
+        " ##### "
+    ]
+];
+
+generateCaptcha();
+
+// Функція для відображення капчі з випадковими цифрами
+function generateCaptcha() {
+    captchaContainer.innerHTML = '';
+    for (let i = 0; i < 5; i++) {
+        const digit = Math.floor(Math.random() * 10);
+        const captchaDigit = document.createElement("div");
+        captchaDigit.className = "captcha-digit";
+        captchaDigit.textContent = digit;
+        captchaDigit.dataset.value = digit;
+        captchaContainer.appendChild(captchaDigit);
+    }
+}
+
+// Функція для перевірки введених користувачем цифр
+function checkCaptcha() {
+    const captchaDigits = document.querySelectorAll(".captcha-digit");
+    const userDigits = userInput.value.split('');
+
+    if (userDigits.length !== captchaDigits.length) {
+        captchaResult.textContent = "Невірно! Спробуйте ще раз.";
+        return;
+    }
+
+    let isValid = true;
+
+    for (let i = 0; i < captchaDigits.length; i++) {
+        if (parseInt(userDigits[i], 10) !== parseInt(captchaDigits[i].dataset.value, 10)) {
+            isValid = false;
+            break;
+        }
+    }
+
+    if (isValid) {
+        captchaResult.textContent = "Вірно! Ви не робот!";
+    } else {
+        captchaResult.textContent = "Невірно! Спробуйте ще раз.";
+    }
+
+    generateCaptcha();
 }
