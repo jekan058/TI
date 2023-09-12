@@ -145,96 +145,97 @@ const captchaResult = document.getElementById("captcha-result");
 // Створення об'єкта для кожної цифри
 const digits = [
     [
-        "  ###  ",
-        " #   # ",
-        "#     #",
-        "#     #",
-        "#     #",
-        " #   # ",
-        "  ###  "
+        [0, 0, 1, 1, 1, 0, 0],
+        [0, 1, 0, 0, 0, 1, 0],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [0, 1, 0, 0, 0, 1, 0],
+        [0, 0, 1, 1, 1, 0, 0]
     ],
     [
-        "   #   ",
-        "  ##   ",
-        " # #   ",
-        "   #   ",
-        "   #   ",
-        "   #   ",
-        " ##### "
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 1, 1, 0, 0, 0],
+        [0, 1, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1, 0]
     ],
     [
-        " ##### ",
-        "#     #",
-        "      #",
-        " ##### ",
-        "#      ",
-        "#      ",
-        "#######"
+        [0, 1, 1, 1, 1, 1, 0],
+        [1, 0, 0, 0, 0, 0, 1],
+        [0, 0, 0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 1, 1, 0],
+        [1, 0, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1]
     ],
     [
-        " ##### ",
-        "#     #",
-        "      #",
-        " ##### ",
-        "      #",
-        "#     #",
-        " ##### "
+        [0, 1, 1, 1, 1, 1, 0],
+        [1, 0, 0, 0, 0, 0, 1],
+        [0, 0, 0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 1, 1, 0]
     ],
     [
-        "#      ",
-        "#    # ",
-        "#    # ",
-        "#    # ",
-        "#######",
-        "     # ",
-        "     # "
+        [1, 0, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1, 0],
+        [1, 0, 0, 0, 0, 1, 0],
+        [1, 0, 0, 0, 0, 1, 0],
+        [1, 1, 1, 1, 1, 1, 1],
+        [0, 0, 0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 0, 1, 0]
     ],
     [
-        "#######",
-        "#      ",
-        "#      ",
-        "#######",
-        "      #",
-        "#     #",
-        " ##### "
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1],
+        [0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 1, 1, 0]
     ],
     [
-        " ##### ",
-        "#     #",
-        "#      ",
-        "#######",
-        "#     #",
-        "#     #",
-        " ##### "
+        [0, 1, 1, 1, 1, 1, 0],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 1, 1, 0]
     ],
     [
-        "#######",
-        "#    # ",
-        "    #  ",
-        "   #   ",
-        "   #   ",
-        "   #   ",
-        "   #   "
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 1, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0]
     ],
     [
-        " ##### ",
-        "#     #",
-        "#     #",
-        " ##### ",
-        "#     #",
-        "#     #",
-        " ##### "
+        [0, 1, 1, 1, 1, 1, 0],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 1, 1, 0],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 1, 1, 0]
     ],
     [
-        " ##### ",
-        "#     #",
-        "#     #",
-        " ######",
-        "      #",
-        "#     #",
-        " ##### "
+        [0, 1, 1, 1, 1, 1, 0],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 1, 1, 1],
+        [0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 1, 1, 0]
     ]
 ];
+
 
 generateCaptcha();
 
@@ -243,9 +244,18 @@ function generateCaptcha() {
     captchaContainer.innerHTML = '';
     for (let i = 0; i < 5; i++) {
         const digit = Math.floor(Math.random() * 10);
-        const captchaDigit = document.createElement("div");
+        const captchaDigit = document.createElement("canvas");
+        const ctx = captchaDigit.getContext('2d');
+        
+        captchaDigit.height = 100
+        captchaDigit.width  = 100
+        
+        const pixelSize = Math.round(captchaDigit.height / ( digits[0][0].length) + 0.5) // Adjust this value to change pixel size
+
+
+
         captchaDigit.className = "captcha-digit";
-        captchaDigit.textContent = digit;
+        pixelizeDigit(digits[digit], ctx, captchaDigit, pixelSize);
         captchaDigit.dataset.value = digit;
         captchaContainer.appendChild(captchaDigit);
     }
@@ -277,4 +287,31 @@ function checkCaptcha() {
     }
 
     generateCaptcha();
+}
+
+// Function to pixelize a digit
+function pixelizeDigit(digit, ctx, canvas, pixelSize) {
+    const imageData = ctx.createImageData(canvas.width, canvas.height);
+    for (let y = 0; y < canvas.height; y += pixelSize) {
+        for (let x = 0; x < canvas.width; x += pixelSize) {
+            const pixelValue = digit[Math.floor(y / pixelSize)][Math.floor(x / pixelSize)];
+            for (let i = 0; i < pixelSize; i++) {
+                for (let j = 0; j < pixelSize; j++) {
+                    const index = ((y + i) * canvas.width + (x + j)) * 4;
+                    let color;
+                    if(Math.round(Math.random() * 1) == 1)
+                    {
+                        color = pixelValue ? 0 : 255;
+                    } else {
+                        color = 0;
+                    }
+                    imageData.data[index] = color; // Red channel
+                    imageData.data[index + 1] = color; // Green channel
+                    imageData.data[index + 2] = color; // Blue channel
+                    imageData.data[index + 3] = 255; // Alpha channel
+                }
+            }
+        }
+    }
+    ctx.putImageData(imageData, 0, 0);
 }

@@ -94,10 +94,14 @@ button:hover {
     margin-right: 5px;
     background-color: #f0f0f0;
     text-align: center;
-    font-size: 30px;
+    font-size: 3px;
     font-weight: bold;
     line-height: 40px;
 }
+
+/*canvas {
+    border: 1px solid #000;
+}*/
 
 #captcha-result {
     font-weight: bold;
