@@ -289,7 +289,6 @@ function checkCaptcha() {
     generateCaptcha();
 }
 
-// Function to pixelize a digit
 function pixelizeDigit(digit, ctx, canvas, pixelSize) {
     const imageData = ctx.createImageData(canvas.width, canvas.height);
     for (let y = 0; y < canvas.height; y += pixelSize) {
